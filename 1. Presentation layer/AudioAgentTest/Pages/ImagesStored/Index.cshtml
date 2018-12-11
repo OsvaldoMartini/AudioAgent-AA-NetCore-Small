@@ -1,0 +1,62 @@
+﻿@page
+@model IndexModel
+
+@section css_additional{
+    <link rel="stylesheet" href="~/css/grid_style.css" />
+}
+
+
+<h2>Simple Page to Simulate Search by Image Url</h2>
+
+@if (Model.ShowMessage)
+{
+    <div class="alert alert-info alert-dismissible" role="alert" class="breadcrumb">
+        <a type="button" data-dismiss="alert" arial-label="Close">@Model.Message</a>
+    </div>
+
+}
+
+
+<form method="get">
+    <div class="grid">
+        <span><strong>Image Url</strong></span>
+        <span><strong></strong></span>
+        <span>
+            <input asp-for="ImagesStorage.ImagePath" class="form-control" placeholder="Input Image Url"></input>
+            @*@Html.TextBox("url", null, new { placeholder = "Input Image Url", @class = "form-control" })*@
+        </span>
+        <span>
+            <button type="submit" class="btn btn-default">Search Image</button>
+        </span>
+
+    </div>
+</form>
+
+@if (Model.HasImageStorage)
+{
+    <table class="table">
+        <thead>
+        <th>@Html.DisplayNameFor(m => m.ImagesStorageCollection[0].Id)</th>
+        <th>@Html.DisplayNameFor(m => m.ImagesStorageCollection[0].ImageName)</th>
+        <th>@Html.DisplayNameFor(m => m.ImagesStorageCollection[0].ImagePath)</th>
+        </thead>
+        <tbody>
+            @foreach (var imagesStorage in Model.ImagesStorageCollection)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => imagesStorage.Id)</td>
+                    <td>@Html.DisplayFor(m => imagesStorage.ImageName)</td>
+                    <td>@Html.DisplayFor(m => imagesStorage.ImagePath)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No images available</p>
+}
+
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

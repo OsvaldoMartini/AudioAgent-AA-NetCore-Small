@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Presentation layer", "1. Presentation layer", "{A49F789A-07C7-465F-93D3-8606BE509A59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Service Layer", "2. Service Layer", "{D96508B9-6C87-4BCF-B5D5-58CC1C6A299F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Data Layer", "3. Data Layer", "{13643F43-E4D3-4BDE-8EBA-493EDD89B8DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Files", "Project Files", "{B34C8CDD-B200-40D6-8BB0-2F253B92062C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A29B839D-06A3-46EB-9C19-9797AF9A0F96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{70F71FC6-78AC-4CAC-805D-AE0AF6040023}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagrams", "Diagrams", "{E9595FF3-6260-4E35-B3FE-E56468849C2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{38AE612B-1DFD-42DA-A146-73557FF544F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assemblies", "Assemblies", "{F5BB3ABC-A3DE-4F90-A9C3-42E90B0073C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{18BD232B-63AE-4023-9736-7034213396FC}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AudioAgentTest", "1. Presentation layer\AudioAgentTest\AudioAgentTest.csproj", "{7D124A49-F897-48AE-9AB7-E6EE135A09CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D124A49-F897-48AE-9AB7-E6EE135A09CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D124A49-F897-48AE-9AB7-E6EE135A09CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D124A49-F897-48AE-9AB7-E6EE135A09CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D124A49-F897-48AE-9AB7-E6EE135A09CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70F71FC6-78AC-4CAC-805D-AE0AF6040023} = {B34C8CDD-B200-40D6-8BB0-2F253B92062C}
+		{E9595FF3-6260-4E35-B3FE-E56468849C2B} = {B34C8CDD-B200-40D6-8BB0-2F253B92062C}
+		{38AE612B-1DFD-42DA-A146-73557FF544F2} = {B34C8CDD-B200-40D6-8BB0-2F253B92062C}
+		{F5BB3ABC-A3DE-4F90-A9C3-42E90B0073C7} = {B34C8CDD-B200-40D6-8BB0-2F253B92062C}
+		{7D124A49-F897-48AE-9AB7-E6EE135A09CF} = {A49F789A-07C7-465F-93D3-8606BE509A59}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E6AE825-7B1D-4DFA-81DD-ED2195196362}
+	EndGlobalSection
+EndGlobal
