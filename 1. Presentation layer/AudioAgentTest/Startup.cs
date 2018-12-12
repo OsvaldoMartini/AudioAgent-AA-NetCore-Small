@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AudioAgentTest.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -37,11 +32,35 @@ namespace AudioAgentTest
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             services.AddMvc().AddRazorPagesOptions(options =>
             {
                 options.Conventions.AddPageRoute("/ImagesStored/Index", "");
             });
 
+
+
+            // Build a customized MVC implementation, without using the default AddMvc(), instead use AddMvcCore().
+            // https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc/MvcServiceCollectionExtensions.cs
+
+            services
+                .AddMvcCore(options =>
+                {
+                    options.RequireHttpsPermanent = true; // does not affect api requests
+                    options.RespectBrowserAcceptHeader = true; // false by default
+                    //options.OutputFormatters.RemoveType<HttpNoContentOutputFormatter>();
+                    
+                    //remove these two below, but added so you know where to place them...
+                    //options.OutputFormatters.Add(new YourCustomOutputFormatter());
+                    //options.InputFormatters.Add(new YourCustomInputFormatter());
+                })
+                //.AddApiExplorer()
+                //.AddAuthorization()
+                .AddFormatterMappings()
+                //.AddCacheTagHelper()
+                //.AddDataAnnotations()
+                //.AddCors()
+                .AddJsonFormatters(); // JSON, or you can build your own custom one (above)
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
