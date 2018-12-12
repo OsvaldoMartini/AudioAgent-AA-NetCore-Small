@@ -31,50 +31,9 @@ namespace AudioAgentTest.Pages.ImagesStored
         [BindProperty]
         public bool HasImageStorage => ImagesStorageCollection != null ? ImagesStorageCollection.Count > 0 : false;
 
-        //public async Task OnGetAsync()
-        //{
-
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-
-        //    var geoCompanySale = await _context.GeoCompanySale.FindAsync(id);
-
-        //    if (geoCompanySale == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return Ok(geoCompanySale);
-
-        //    ImageStorage = await _db.ImageStorage.ToListAsync();
-        //}
-
-
-
-        //public async Task<IActionResult> OnGetAsync()
-        //{
-        //    if (string.IsNullOrEmpty(SearchUrl))
-        //    {
-        //        return Page();
-        //        //return BadRequest();
-        //    }
-
-        //    ImageStorage = await _db.ImageStorage.ToListAsync();
-
-        //    if (ImageStorage == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Page();
-        //}
-
         [BindProperty(SupportsGet = true)]
         public ImagesStorage ImagesStorage { get; set; }
 
-        [BindProperty(SupportsGet = true)]
-        public string SearchUrl { get; set; }
         public async Task<IActionResult> OnGetAsync()
         {
             if (string.IsNullOrEmpty(ImagesStorage.ImagePath))
