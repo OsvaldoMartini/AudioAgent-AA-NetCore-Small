@@ -46,21 +46,11 @@ namespace AudioAgentTest
             services
                 .AddMvcCore(options =>
                 {
-                    options.RequireHttpsPermanent = true; // does not affect api requests
-                    options.RespectBrowserAcceptHeader = true; // false by default
-                    //options.OutputFormatters.RemoveType<HttpNoContentOutputFormatter>();
-                    
-                    //remove these two below, but added so you know where to place them...
-                    //options.OutputFormatters.Add(new YourCustomOutputFormatter());
-                    //options.InputFormatters.Add(new YourCustomInputFormatter());
+                    options.RequireHttpsPermanent = true; 
+                    options.RespectBrowserAcceptHeader = true; 
                 })
-                //.AddApiExplorer()
-                //.AddAuthorization()
                 .AddFormatterMappings()
-                //.AddCacheTagHelper()
-                //.AddDataAnnotations()
-                //.AddCors()
-                .AddJsonFormatters(); // JSON, or you can build your own custom one (above)
+                .AddJsonFormatters();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
